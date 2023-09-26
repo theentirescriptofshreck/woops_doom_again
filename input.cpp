@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include "N64Controller.h"
 #include "input.h"
 #include "constants.h"
 

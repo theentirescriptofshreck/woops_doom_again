@@ -48,6 +48,7 @@ void playSound(const uint8_t* snd, uint8_t len) {
 
 // Set the frequency that we will get on pin OCR1A
 void setFrequency(uint16_t freq) {
+   
   uint32_t requiredDivisor = (F_CPU / 2) / (uint32_t)freq;
 
   uint16_t prescalerVal;

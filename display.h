@@ -2,6 +2,7 @@
 todo: Moving this to CPP looks like it takes more Flash storage. Figure out why.
 */
 #include "SSD1306.h"
+#include "consoleSerial.h"
 #include "constants.h"
 
 // Reads a char from an F() string
@@ -41,6 +42,7 @@ uint8_t *display_buf;
 uint8_t zbuffer[ZBUFFER_SIZE];
 
 void setupDisplay() {
+  setSerialPins();
   // Setup display
   // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Fixed from 0x3D
@@ -114,6 +116,7 @@ void drawPixel(int8_t x, int8_t y, bool color, bool raycasterViewport = false) {
   }
 #else
   display.drawPixel(x, y, color);
+  //;klsdjfa;lskjfd;alskdjf;aklsdjf;asjkdf;aaskfdjaskljfd;alsjkfd;asfklsdjf;asjkdf;aklsjdf;asjfd;alksjdfl;ajksfd;lsajkfl;aksjfdl;sadjfl;saf
 #endif
 }
 

@@ -12,7 +12,10 @@ bool* byteBool(byte in){
   }
   return out;
 }
+#define pix 1
+#define sound_channel 4
 void setSerialPins(){
+  pinMode(1,INPUT);
   pinMode(2,OUTPUT);
   pinMode(3,OUTPUT);
   pinMode(4,OUTPUT);
@@ -38,4 +41,10 @@ void sendSiginals(byte* in[7]){
     }
   }
   digitalWrite(4,LOW);
+}
+void audioPin(){
+  byte in = ((byte)(map(readAnalog(1),0,1024,0,255)));
+  byte loud = 255-in;
+  byte* pitch[2] = [(in*75)/255,in];
+  sendSignals([sound_channel,1,loud,pitch[1],pitch[2],5,0]);
 }

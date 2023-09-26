@@ -118,7 +118,7 @@ void drawPixel(int8_t x, int8_t y, bool color, bool raycasterViewport = false) {
   byte o=0;
   display.drawPixel(x, y, color);
   if(color){o=1;}
-  sendSignals([1,x,y,o,0,0,0,0]);
+  sendSignals([set_pixel,x,y,o,0,0,0,0]);
   //;klsdjfa;lskjfd;alskdjf;aklsdjf;asjkdf;aaskfdjaskljfd;alsjkfd;asfklsdjf;asjkdf;aklsjdf;asjfd;alksjdfl;ajksfd;lsajkfl;aksjfdl;sadjfl;saf
 #endif
 }
